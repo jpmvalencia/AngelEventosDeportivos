@@ -16,6 +16,7 @@ public class JugadorDAO {
     private int numero;
     private int equipoId;
     private boolean estadoActivo;
+    private String equipoNombre; // Nombre del equipo (esto es para el GET)
 
     public JugadorDAO(int id, String nombre, String apellido, String fechaNacimiento, String nacionalidad, String posicion, int numero, int equipoId, boolean estadoActivo) {
         this.id = id;
@@ -29,7 +30,7 @@ public class JugadorDAO {
         this.estadoActivo = estadoActivo;
     }
 
-    // Métodos CRUD
+    // Métodos CRUD (Create, Read, Update, Delete)
     public static void insertar(JugadorDAO jugador) {
         jugadoresDB.put(jugador.getId(), jugador);
     }
@@ -46,7 +47,6 @@ public class JugadorDAO {
         jugadoresDB.remove(id);
     }
 
-    // **Método que agrega la funcionalidad que falta**
     public static ArrayList<JugadorDAO> obtenerTodos() {
         return new ArrayList<>(jugadoresDB.values());
     }
@@ -122,5 +122,13 @@ public class JugadorDAO {
 
     public void setEstadoActivo(boolean estadoActivo) {
         this.estadoActivo = estadoActivo;
+    }
+
+    public String getEquipoNombre() {
+        return equipoNombre;
+    }
+
+    public void setEquipoNombre(String equipoNombre) {
+        this.equipoNombre = equipoNombre;
     }
 }
