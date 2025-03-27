@@ -1,5 +1,6 @@
 package com.sportsevent.gestoreventosdeportivos.DAO;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,6 +44,11 @@ public class JugadorDAO {
 
     public static void eliminar(int id) {
         jugadoresDB.remove(id);
+    }
+
+    // **Método que agrega la funcionalidad que falta**
+    public static ArrayList<JugadorDAO> obtenerTodos() {
+        return new ArrayList<>(jugadoresDB.values());
     }
 
     // Getters y Setters
