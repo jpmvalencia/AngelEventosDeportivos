@@ -12,7 +12,8 @@ public class EventoDAO {
     private String fecha;
     private String lugar;
     private String deporte;
-    private ArrayList<Integer> equiposParticipantes;
+    private ArrayList<Integer> equiposParticipantes; // Lista de IDs de equipos
+    private ArrayList<String> equiposParticipantesNombres; // Lista de nombres de equipos para respuesta
     private int capacidad;
     private int entradasVendidas;
     private String estado; // "Programado", "En curso", "Finalizado", "Cancelado"
@@ -121,5 +122,13 @@ public class EventoDAO {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public ArrayList<String> getEquiposParticipantesNombres() {
+        return equiposParticipantesNombres;
+    }
+
+    public void setEquiposParticipantesNombres(ArrayList<String> equiposParticipantesNombres) {
+        this.equiposParticipantesNombres = equiposParticipantesNombres;
     }
 }
